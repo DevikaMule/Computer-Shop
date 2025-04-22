@@ -1,0 +1,78 @@
+/* Background with subtle gradient */
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Form container styled as a card */
+form {
+    background: #ffffff;
+    padding: 2.5rem 3rem;
+    border-radius: 12px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 420px;
+    box-sizing: border-box;
+}
+
+/* Heading style */
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #4a4a4a;
+    letter-spacing: 1px;
+}
+
+/* Input fields style */
+input.form-control {
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input.form-control:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 8px rgba(102, 126, 234, 0.5);
+    outline: none;
+}
+
+/* Checkbox label style */
+.form-check-label {
+    user-select: none;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Button style */
+button.btn-primary {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border: none;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+button.btn-primary:hover {
+    background: linear-gradient(135deg, #5a67d8, #6b46c1);
+    box-shadow: 0 6px 12px rgba(102, 126, 234, 0.6);
+}
+
+/* Helper text style */
+#emailHelp {
+    font-size: 0.85rem;
+    color: #888;
+    margin-top: 0.25rem;
+}

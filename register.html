@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+
+    <form class="row g-3" id="registerForm" novalidate>
+        <div class="col-md-4">
+          <label for="name" class="form-label">Name </label>
+          <input type="text" class="form-control" id="name" placeholder="Name" required>
+          <div class="invalid-feedback">
+            Please enter your name.
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="email" class="form-label">Email id</label>
+          <input type="email" class="form-control" id="email" placeholder="Email id" required>
+          <div class="invalid-feedback">
+            Please enter a valid email.
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="phone" class="form-label">Phone number</label>
+          <div class="input-group">
+            <input type="tel" class="form-control" id="phone" aria-describedby="inputGroupPrepend2" placeholder="Phone number" required >
+            <div class="invalid-feedback">
+              Please enter a valid 10-digit phone number.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="city" class="form-label">City</label>
+          <input type="text" class="form-control" id="city" placeholder="City" required>
+          <div class="invalid-feedback">
+            Please enter your city.
+          </div>
+        </div>
+        <div class="col-md-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" required>
+          <div class="invalid-feedback">
+            Please enter a password.
+          </div>
+        </div>
+        <div class="col-md-3">
+          <label for="confirmPassword" class="form-label">Confirm Password</label>
+          <input type="password" class="form-control" id="confirmPassword" required>
+          <div class="invalid-feedback" id="confirmPasswordFeedback">
+            Please confirm your password.
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+            <label class="form-check-label" for="invalidCheck2">
+              Agree to terms and conditions
+            </label>
+            <div class="invalid-feedback">
+              You must agree before submitting.
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Register</button>
+        </div>
+      </form>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+
+      <script type="text/javascript">
+        (function() {
+          'use strict'
+          const form = document.getElementById('registerForm');
+          form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            // Check built-in validation
+            if (!form.checkValidity()) {
+              form.classList.add('was-validated');
+              return;
+            }
+
+            // Custom password match validation
+            const password = document.getElementById('password');
+            const confirmPassword = document.getElementById('confirmPassword');
+            const confirmPasswordFeedback = document.getElementById('confirmPasswordFeedback');
+
+            if (password.value !== confirmPassword.value) {
+              confirmPassword.setCustomValidity('Passwords do not match');
+              confirmPasswordFeedback.textContent = 'Passwords do not match';
+              form.classList.add('was-validated');
+              return;
+            } else {
+              confirmPassword.setCustomValidity('');
+              confirmPasswordFeedback.textContent = 'Please confirm your password.';
+            }
+
+            alert('Registration Successful');
+            window.location.href = "login.html";
+          }, false);
+        })();
+      </script>
+    
+    
+</body>
+</html>
